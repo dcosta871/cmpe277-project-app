@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private Student student;
-    public String _baseURL = "http://10.193.6.16:4000/student";
+    public String _baseURL = "http://10.250.162.1:4000/student";
     public String _userEmail = "bob@sjsu.edu";
 
     @Override
