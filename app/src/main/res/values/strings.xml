@@ -19,6 +19,14 @@
     <string name="menu_schedule">Schedule</string>
     <string name="menu_logout">Logout</string>
 
+    <string name="username">Username</string>>
+    <string name="password">Password</string>>
+    <string name="confirm_password">Confirm Password</string>>
+    <string name="login">Login</string>>
+    <string name="not_registered">Not_Registered</string>>
+    <string name="already_registered">Already Registered</string>>
+    <string name="register">Register</string>
+
 
     <string name="wifi_disconnected">Cannot connect to network, please establish a connection</string>
     <string name="request_error">Issue contacting api, check internet connection or server status</string>
