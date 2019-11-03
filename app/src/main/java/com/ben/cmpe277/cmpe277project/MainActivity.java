@@ -48,9 +48,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private Student student;
-    public String _baseURL = "http://10.250.162.1:4000/student";
-    public String _userEmail = "bob@sjsu.edu";
+    public Student student = null;
+    public String _baseURL = "http://172.16.200.1:4000/student";
+    private TextView navUserName;
+    private TextView navEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,43 +83,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        ConnectivityManager cm =
-                (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null &&
-                activeNetwork.isConnectedOrConnecting();
-        if (isConnected) {
-            RequestQueue queue = Volley.newRequestQueue(this);
-            String endpoint = _baseURL + "/" + _userEmail;
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, endpoint,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject resJSON = new JSONObject(response);
-                                TextView navUserName = findViewById(R.id.nav_user_name);
-                                TextView navEmail = findViewById(R.id.nav_user_email);
-                                if (navUserName != null) {
-                                    navUserName.setText(resJSON.getString("name"));
-                                }
-                                if (navEmail != null) {
-                                    navEmail.setText(resJSON.getString("email"));
-                                }
-                            } catch (JSONException e) {
-                                showSnackBarMessage(e.getMessage());
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    showSnackBarMessage(getString(R.string.request_error));
-                }
-            });
-            queue.add(stringRequest);
-        }
-        else {
-            showSnackBarMessage(getString(R.string.wifi_disconnected));
+        View header = ((NavigationView)findViewById(R.id.nav_view)).getHeaderView(0);
+        navUserName = header.findViewById(R.id.nav_user_name);
+        navEmail = header.findViewById(R.id.nav_user_email);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            student = (Student) extras.getSerializable("student");
+            updateStudentUI();
         }
     }
 
@@ -186,5 +157,48 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
         return;
+    }
+
+    public void getUserInfo() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        if (isConnected) {
+            RequestQueue queue = Volley.newRequestQueue(this);
+            String endpoint = _baseURL + "/" + student.email;
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, endpoint,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject resJSON = new JSONObject(response);
+                                if (navUserName != null) {
+                                    navUserName.setText(resJSON.getString("name"));
+                                }
+                                if (navEmail != null) {
+                                    navEmail.setText(resJSON.getString("email"));
+                                }
+                            } catch (JSONException e) {
+                                showSnackBarMessage(e.getMessage());
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    showSnackBarMessage(getString(R.string.request_error));
+                }
+            });
+            queue.add(stringRequest);
+        }
+        else {
+            showSnackBarMessage(getString(R.string.wifi_disconnected));
+        }
+    }
+
+    public void updateStudentUI() {
+        navUserName.setText(student.name);
+        navEmail.setText(student.email);
     }
 }

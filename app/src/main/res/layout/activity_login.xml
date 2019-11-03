@@ -21,13 +21,13 @@
             android:layout_marginTop="50dp" />
 
         <EditText
-            android:id="@+id/edittext_username"
+            android:id="@+id/edittext_email"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="40dp"
             android:background="#ffffff"
-            android:hint="@string/username"
-            android:inputType="textPassword"
+            android:hint="@string/email"
+            android:inputType="text"
             android:textSize="30dp" />
 
         <EditText

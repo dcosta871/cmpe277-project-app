@@ -16,23 +16,13 @@
         tools:layout_editor_absoluteY="281dp">
 
         <AutoCompleteTextView
-            android:id="@+id/edittext_userFirstName"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="120dp"
-            android:background="#ffffff"
-            android:hint="First Name"
-            android:inputType="textPassword"
-            android:textSize="30dp" />
-
-        <AutoCompleteTextView
-            android:id="@+id/edittext_userLastName"
+            android:id="@+id/edittext_user_name"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="#ffffff"
-            android:hint="Last Name"
-            android:inputType="textPassword"
+            android:hint="@string/name"
+            android:inputType="text"
             android:textSize="30dp" />
 
         <EditText
@@ -41,7 +31,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="#ffffff"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textSize="30dp" />
 
@@ -51,8 +41,8 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="#ffffff"
-            android:hint="Phone#"
-            android:inputType="textPhonetic"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
             android:textSize="30dp" />
 
         <EditText

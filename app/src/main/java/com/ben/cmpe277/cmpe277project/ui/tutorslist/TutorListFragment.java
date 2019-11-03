@@ -79,7 +79,7 @@ public class TutorListFragment extends Fragment implements TutorAdapter.TutorLis
                                 for (int i = 0; i < resJSON.length(); i++) {
                                     String tutorString = resJSON.getJSONObject(i).toString();
                                     Student tutor = m.readValue(tutorString, Student.class);
-                                    if (!tutor.email.equals(((MainActivity) getActivity())._userEmail))
+                                    if (!tutor.email.equals(((MainActivity) getActivity()).student.email))
                                     {
                                         obtainedTutors.add(tutor);
                                     }
