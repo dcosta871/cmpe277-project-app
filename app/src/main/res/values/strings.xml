@@ -38,6 +38,7 @@
     <string name="phone_number_required">Phone number required</string>
     <string name="passwords_must_match">Passwords must match</string>
     <string name="created_user">User Created</string>
+    <string name="user_updated">User Updated</string>
     <string name="email_exists">Email already exists, pick a different one</string>
 
     <string name="wifi_disconnected">Cannot connect to network, please establish a connection</string>

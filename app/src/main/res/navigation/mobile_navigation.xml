@@ -13,14 +13,20 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.ben.cmpe277.cmpe277project.ui.gallery.GalleryFragment"
+        android:name="com.ben.cmpe277.cmpe277project.ui.editprofile.EditProfileFragment"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_edit_profile" />
 
     <fragment
         android:id="@+id/nav_schedule"
         android:name="com.ben.cmpe277.cmpe277project.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_schedule"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.ben.cmpe277.cmpe277project.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
 
 </navigation>

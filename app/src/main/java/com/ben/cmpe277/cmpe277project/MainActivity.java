@@ -1,6 +1,7 @@
 package com.ben.cmpe277.cmpe277project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.ben.cmpe277.cmpe277project.ui.login.LoginActivity;
+import com.ben.cmpe277.cmpe277project.ui.login.RegisterActivity;
 import com.ben.cmpe277.cmpe277project.ui.tutorslist.TutorListFragment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -78,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
                     int id = destination.getId();
 
-                    //TutorListFragment tutorListFragment = (TutorListFragment) getSupportFragmentManager().getPrimaryNavigationFragment();
-                    //updateTutors();
                 }
             }
         });

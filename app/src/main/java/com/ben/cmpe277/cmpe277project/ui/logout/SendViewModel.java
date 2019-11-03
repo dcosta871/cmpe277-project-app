@@ -1,4 +1,4 @@
-package com.ben.cmpe277.cmpe277project.ui.send;
+package com.ben.cmpe277.cmpe277project.ui.logout;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

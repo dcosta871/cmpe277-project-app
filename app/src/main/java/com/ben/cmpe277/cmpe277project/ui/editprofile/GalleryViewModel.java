@@ -1,4 +1,4 @@
-package com.ben.cmpe277.cmpe277project.ui.gallery;
+package com.ben.cmpe277.cmpe277project.ui.editprofile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
