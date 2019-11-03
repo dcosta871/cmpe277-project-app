@@ -52,13 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public Student student = null;
-    public String _baseURL = "http://172.16.200.1:4000/student";
+    public String _baseURL;
     private TextView navUserName;
     private TextView navEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        _baseURL = getString(R.string.baseURL_);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

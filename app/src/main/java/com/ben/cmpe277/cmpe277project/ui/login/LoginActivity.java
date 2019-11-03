@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText mTextPassword;
     Button mButtonLogin;
     TextView mTextViewRegister;
-    public String _baseURL = "http://172.16.200.1:4000/student";
+    public String _baseURL;
     private ObjectMapper m = new ObjectMapper();
 
 
@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        _baseURL = getString(R.string.baseURL_);
         mTextEmail = (EditText) findViewById(R.id.edittext_email);
         mTextPassword = (EditText) findViewById(R.id.edittext_password);
         mButtonLogin = (Button) findViewById(R.id.button_login);

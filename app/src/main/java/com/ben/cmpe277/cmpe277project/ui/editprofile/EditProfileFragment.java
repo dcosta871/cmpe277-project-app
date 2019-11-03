@@ -50,7 +50,6 @@ public class EditProfileFragment extends Fragment {
     private Button editConfirmBtn;
     private Button editCancelBtn;
     private Student student;
-    public String _baseURL = "http://172.16.200.1:4000/student";
     private ObjectMapper m = new ObjectMapper();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -135,7 +134,7 @@ public class EditProfileFragment extends Fragment {
                         activeNetwork.isConnectedOrConnecting();
                 if (isConnected) {
                     RequestQueue queue = Volley.newRequestQueue(getContext());
-                    String endpoint = _baseURL + "/" + student.email;
+                    String endpoint = getString(R.string.baseURL_) + "/" + student.email;
                     StringRequest stringRequest = new StringRequest(Request.Method.PUT, endpoint,
                             new Response.Listener<String>() {
                                 @Override

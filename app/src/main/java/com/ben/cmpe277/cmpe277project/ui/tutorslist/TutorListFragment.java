@@ -67,7 +67,7 @@ public class TutorListFragment extends Fragment implements TutorAdapter.TutorLis
                 activeNetwork.isConnectedOrConnecting();
         if (isConnected) {
             RequestQueue queue = Volley.newRequestQueue(getContext());
-            String endpoint = ((MainActivity) getActivity())._baseURL;
+            String endpoint = getString(R.string.baseURL_);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, endpoint,
                     new Response.Listener<String>() {
                         @Override
