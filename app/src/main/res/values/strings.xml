@@ -18,6 +18,7 @@
     <string name="menu_profile">Edit Profile</string>
     <string name="menu_schedule">Schedule</string>
     <string name="menu_logout">Logout</string>
+    <string name="menu_tutor">Tutor Settings</string>
 
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -40,6 +41,17 @@
     <string name="created_user">User Created</string>
     <string name="user_updated">User Updated</string>
     <string name="email_exists">Email already exists, pick a different one</string>
+    <string name="tab_text_1">Student</string>
+    <string name="tab_text_2">Tutor</string>
+    <string name="price">Price</string>
+    <string name="subject">Subject</string>
+    <string name="description">Description</string>
+    <string name="tutor_visible">Appear Visible</string>
+    <string name="description_required">Description Required</string>
+    <string name="subject_required">Subject Required</string>
+    <string name="price_required">Price Required</string>
+    <string name="tutor_info">Tutor Info</string>
+    <string name="tutor_updated">Tutor Information updated</string>
 
     <string name="wifi_disconnected">Cannot connect to network, please establish a connection</string>
     <string name="request_error">Issue contacting api, check internet connection or server status</string>
@@ -48,5 +60,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="baseURL_">http://192.168.1.217:4000/student</string>
+    <string name="baseURL_">http://10.193.26.122:4000/student</string>
 </resources>

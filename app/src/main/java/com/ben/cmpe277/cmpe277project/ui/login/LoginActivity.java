@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
     public String _baseURL;
     private ObjectMapper m = new ObjectMapper();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
