@@ -1,6 +1,7 @@
 package com.ben.cmpe277.cmpe277project.ui.tutorslist;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 import com.ben.cmpe277.cmpe277project.MainActivity;
 import com.ben.cmpe277.cmpe277project.R;
 import com.ben.cmpe277.cmpe277project.Student;
+import com.ben.cmpe277.cmpe277project.ui.viewtutor.ViewTutorActivity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONArray;
@@ -79,7 +81,7 @@ public class TutorListFragment extends Fragment implements TutorAdapter.TutorLis
                                 for (int i = 0; i < resJSON.length(); i++) {
                                     String tutorString = resJSON.getJSONObject(i).toString();
                                     Student tutor = m.readValue(tutorString, Student.class);
-                                    if (!tutor.email.equals(((MainActivity) getActivity()).student.email))
+                                    if (!tutor.email.equals(((MainActivity) getActivity()).student.email) && Boolean.parseBoolean(tutor.isTutorVisible))
                                     {
                                         obtainedTutors.add(tutor);
                                     }
@@ -106,6 +108,9 @@ public class TutorListFragment extends Fragment implements TutorAdapter.TutorLis
 
     @Override
     public void tutorSelected(Student student) {
-        System.out.println("Student selected");
+        Intent i = new Intent(getActivity(), ViewTutorActivity.class);
+        i.putExtra("tutor", student);
+        i.putExtra("student", ((MainActivity) getActivity()).student);
+        startActivity(i);
     }
 }
