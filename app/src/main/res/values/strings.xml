@@ -54,6 +54,10 @@
     <string name="tutor_updated">Tutor Information updated</string>
     <string name="select_date">Select date</string>
     <string name="time_already_selected">Time already selected</string>
+    <string name="pending">Pending</string>
+    <string name="tutor_session_removed">Tutor Session Removed</string>
+    <string name="tutor_session_added">Tutor Session Added to Schedule</string>
+    <string name="schedule_error">Scheduling error, please make space or remove</string>
 
     <string name="wifi_disconnected">Cannot connect to network, please establish a connection</string>
     <string name="request_error">Issue contacting api, check internet connection or server status</string>
@@ -62,5 +66,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="baseURL_">http://192.168.0.17:4000/student</string>
+    <string name="baseURL_">http://10.193.26.122:4000/student</string>
 </resources>

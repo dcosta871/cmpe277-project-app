@@ -208,8 +208,8 @@ public class EditStudentInfoFragment extends Fragment {
 
         nameEditText.setEnabled(true);
         nameEditText.setInputType(InputType.TYPE_CLASS_TEXT);
-        emailEditText.setEnabled(true);
-        emailEditText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+       // emailEditText.setEnabled(true);
+        //emailEditText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         phoneEditText.setEnabled(true);
         phoneEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PHONETIC);
     }

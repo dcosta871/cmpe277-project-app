@@ -111,6 +111,7 @@ public class ViewTutorActivity extends AppCompatActivity {
                         @Override
                         protected Map<String,String> getParams(){
                             Map<String,String> params = new HashMap<String, String>();
+                            params.put("tutor", tutor.email);
                             params.put("student", student.email);
                             params.put("date", dateTextView.getText().toString().trim());
                             params.put("time",  selectTimeSpinner.getSelectedItem().toString().trim());
