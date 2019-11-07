@@ -84,6 +84,10 @@ public class ViewTutorActivity extends AppCompatActivity {
         bookTutorButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                if (dateTextView.getText().length() == 0){
+                    showSnackBarMessage("Date must be specified");
+                    return;
+                }
                 ConnectivityManager cm =
                         (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -139,7 +143,7 @@ public class ViewTutorActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(ViewTutorActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        dateTextView.setText(i + "/" + i1 + "/" + i2);
+                        dateTextView.setText(i + "/" + (i1 + 1) + "/" + i2);
                     }
                 }, year, month, day);
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);

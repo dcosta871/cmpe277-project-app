@@ -37,6 +37,7 @@ public class AppointmentRecyclerViewAdapter extends RecyclerView.Adapter<Appoint
     @Override
     public void onBindViewHolder(final AppointmentRecyclerViewAdapter.ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
+        Appointment ap = mValues.get(position);
         if (position % 2 == 1)
         {
             holder.itemView.setBackgroundColor(Color.parseColor("#F2F2F2"));
@@ -53,6 +54,9 @@ public class AppointmentRecyclerViewAdapter extends RecyclerView.Adapter<Appoint
             holder.studentNameTextView.setText(mValues.get(position).tutor);
 //            holder.approveSessionButton.hide();
         }
+        holder.dateTextView.setText(ap.date);
+        holder.timeTextView.setText(ap.timeSlot);
+
 
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -84,16 +88,16 @@ public class AppointmentRecyclerViewAdapter extends RecyclerView.Adapter<Appoint
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView studentNameTextView;
-        public final FloatingActionButton approveSessionButton;
-        public final FloatingActionButton cancelSessionButton;
+        public final TextView dateTextView;
+        public final TextView timeTextView;
         public Appointment mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             studentNameTextView = view.findViewById(R.id.student_name_session);
-            approveSessionButton = view.findViewById(R.id.approve_session);
-            cancelSessionButton = view.findViewById(R.id.cancel_session);
+            dateTextView = view.findViewById(R.id.appointment_date);
+            timeTextView = view.findViewById(R.id.appointment_time);
         }
 
         @Override
