@@ -104,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                         activeNetwork.isConnectedOrConnecting();
                 if (isConnected) {
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                    String endpoint = _baseURL;
+                    String endpoint = getString(R.string.baseURL_);
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, endpoint,
                             new Response.Listener<String>() {
                                 @Override
